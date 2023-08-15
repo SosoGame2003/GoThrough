@@ -7,6 +7,7 @@
 SceneManager::SceneManager()
 	: currentScene(nullptr)
 	, deltaTime(0.0f)
+	, currentTime(0)
 	, time(0)
 	, fpsCheckTime(0)
 	, fps(0)
