@@ -9,9 +9,12 @@ Player::Player()
 	, moveY(0.0f)
 {
 	pos = VGet(0.0f, 0.0f, 0.0f);
+
 	modelHandle = MV1LoadModel("Data/Model/Rocket.mv1");
-	MV1SetScale(modelHandle, VGet(0.5f, 0.5f, 0.5f));
-	MV1SetRotationXYZ(modelHandle, VGet(90.0f * DX_PI_F / 180.0f, 0.0f, 0.0f));
+	MV1SetScale(modelHandle, VGet(0.5f, 0.5f, 0.5f));												// モデルのサイズを変更
+	MV1SetRotationXYZ(modelHandle, VGet(90.0f * DX_PI_F / 180.0f, 0.0f, 0.0f));						// モデルをX方向に90°回転
+	MV1SetMaterialEmiColor(modelHandle, 0, GetColorF(0.0f, 0.0f, 1.0f, 1.0f));	// プレイヤーモデルの機体の色
+	MV1SetMaterialEmiColor(modelHandle, 1, GetColorF(0.1f, 0.0f, 0.0f, 1.0f));	// プレイヤーモデルのエンジンの色
 }
 
 Player::~Player()

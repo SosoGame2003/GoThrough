@@ -19,15 +19,20 @@ void Map::Update(float deltaTime)
 
 void Map::Draw()
 {
-	// マップ四隅の線
-	DrawLine3D(UpperLeftFrontPos,   UpperLeftBackPos,   FourCornersOfMapLineColor);	// マップ左上の線
-	DrawLine3D(BottomLeftFrontPos,  BottomLeftBackPos,  FourCornersOfMapLineColor);	// マップ左下の線
-	DrawLine3D(UpperRightFrontPos,  UpperRightBackPos,  FourCornersOfMapLineColor);	// マップ右上の線
-	DrawLine3D(BottomRightFrontPos, BottomRightBackPos, FourCornersOfMapLineColor);	// マップ右下の線
+	// マップの枠を示す線
+	DrawLine3D(upperLeftFrontPos,    upperLeftBackPos,    mapBorderCornerLineColor);	// マップ左上の線
+	DrawLine3D(bottomLeftFrontPos,   bottomLeftBackPos,   mapBorderCornerLineColor);	// マップ左下の線
+	DrawLine3D(upperRightFrontPos,   upperRightBackPos,   mapBorderCornerLineColor);	// マップ右上の線
+	DrawLine3D(bottomRightFrontPos,  bottomRightBackPos,  mapBorderCornerLineColor);	// マップ右下の線
 
-	// プレイヤーのZ座標を示す線
-	DrawLine3D(PlayerPosZUpperLeftPos,   PlayerPosZBottomLeftPos,  PlayerPosZLineColor);	// 左の線
-	DrawLine3D(PlayerPosZBottomLeftPos,  PlayerPosZBottomRightPos, PlayerPosZLineColor);	// 下の線
-	DrawLine3D(PlayerPosZBottomRightPos, PlayerPosZUpperRightPos,  PlayerPosZLineColor);	// 右の線
-	DrawLine3D(PlayerPosZUpperRightPos,  PlayerPosZUpperLeftPos,   PlayerPosZLineColor);	// 上の線
+	DrawLine3D(centerLeftFrontPos,   centerLeftBackPos,   mapBorderCenterLineColor);	// マップ左中心の線
+	DrawLine3D(centerRightFrontPos,  centerRightBackPos,  mapBorderCenterLineColor);	// マップ右中心の線
+	DrawLine3D(centerUpperFrontPos,  centerUpperBackPos,  mapBorderCenterLineColor);	// マップ上中心の線
+	DrawLine3D(centerBottomFrontPos, centerBottomBackPos, mapBorderCenterLineColor);	// マップ下中心の線
+
+	// プレイヤーの座標を示す線
+	DrawLine3D(playerPosUpperLeftPos,   playerPosBottomLeftPos,  playerPosLineColor);	// 左の線
+	DrawLine3D(playerPosBottomLeftPos,  playerPosBottomRightPos, playerPosLineColor);	// 下の線
+	DrawLine3D(playerPosBottomRightPos, playerPosUpperRightPos,  playerPosLineColor);	// 右の線
+	DrawLine3D(playerPosUpperRightPos,  playerPosUpperLeftPos,   playerPosLineColor);	// 上の線
 }
