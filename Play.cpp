@@ -2,23 +2,27 @@
 #include<DxLib.h>
 #include"Play.h"
 #include"Map.h"
+#include"Player.h"
 
 Play::Play()
 {
 	map = new Map();
-
-	g = LoadGraph("Data/Graph/DummyPlay.png");
+	player = new Player();
 }
 
 Play::~Play()
 {
 	delete map;
 	map = nullptr;
+
+	delete player;
+	player = nullptr;
 }
 
 SCENE_TAG Play::Update(float deltaTime)
 {
 	map->Update(deltaTime);
+	player->Update(deltaTime);
 
 	if (CheckHitKey(KEY_INPUT_SPACE))
 	{
@@ -36,4 +40,5 @@ SCENE_TAG Play::Update(float deltaTime)
 void Play::Draw()
 {
 	map->Draw();
+	player->Draw();
 }

@@ -22,6 +22,5 @@ public:
 
 private:
 	class Map* map;
-
-	int g;
+	class Player* player;
 };
