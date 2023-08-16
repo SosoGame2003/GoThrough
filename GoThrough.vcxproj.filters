@@ -17,6 +17,15 @@
     <Filter Include="Source\Player">
       <UniqueIdentifier>{640da061-236a-491c-aef1-c2e90fe196c9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Wall">
+      <UniqueIdentifier>{b433a789-1e5e-49cf-81ca-a556bbb2aaf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Collision">
+      <UniqueIdentifier>{c5448ea3-0ef7-4d26-b6ad-21e4cf2dea0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Scene\SceneType">
+      <UniqueIdentifier>{94253a16-f9db-4543-86de-403ea6727479}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
@@ -24,15 +33,6 @@
     </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source\System</Filter>
-    </ClCompile>
-    <ClCompile Include="MainMenu.cpp">
-      <Filter>Source\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Play.cpp">
-      <Filter>Source\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Result.cpp">
-      <Filter>Source\Scene</Filter>
     </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>Source\Scene</Filter>
@@ -43,19 +43,25 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source\Player</Filter>
     </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>Source\Wall</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Source\Scene\SceneType</Filter>
+    </ClCompile>
+    <ClCompile Include="Play.cpp">
+      <Filter>Source\Scene\SceneType</Filter>
+    </ClCompile>
+    <ClCompile Include="Result.cpp">
+      <Filter>Source\Scene\SceneType</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Source\Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h">
       <Filter>Source\System</Filter>
-    </ClInclude>
-    <ClInclude Include="MainMenu.h">
-      <Filter>Source\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Play.h">
-      <Filter>Source\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Result.h">
-      <Filter>Source\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>Source\Scene</Filter>
@@ -68,6 +74,21 @@
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Source\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Source\Wall</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Source\Scene\SceneType</Filter>
+    </ClInclude>
+    <ClInclude Include="Play.h">
+      <Filter>Source\Scene\SceneType</Filter>
+    </ClInclude>
+    <ClInclude Include="Result.h">
+      <Filter>Source\Scene\SceneType</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Source\Collision</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

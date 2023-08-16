@@ -114,4 +114,5 @@ void Player::Draw()
 	printfDx("moveY:%f\n", moveY);
 
 	MV1DrawModel(modelHandle);
+	DrawSphere3D(pos, 30.0f, 16, GetColor(0, 0, 255), GetColor(0, 0, 255), FALSE);
 }

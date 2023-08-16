@@ -4,7 +4,7 @@
 
 MainMenu::MainMenu()
 {
-	LoadDivGraph("Data/Graph/TitleLogo.png", 9, 9, 1, 75, 120, logoGraphHandle);	// 元画像(X：675px, Y：120px)
+	LoadDivGraph("Data/Graph/TitleLogoChip.png", 9, 9, 1, 75, 120, logoGraphHandle);	// 元画像(X：675px, Y：120px)
 }
 
 MainMenu::~MainMenu()

@@ -41,9 +41,4 @@ private:
 	const VECTOR playerPosBottomRightPos = VGet( 300,-300, 0);	// マップの枠の右下の座標
 
 	int playerPosLineColor = GetColor(255, 0, 0);	// プレイヤーの座標を示すの線の色
-
-	// フォグ関係
-	float fogStartPos =    0.0f;	// フォグの開始位置
-	float fogEndPos	  = 2000.0f;	// フォグの終了位置
-
 };

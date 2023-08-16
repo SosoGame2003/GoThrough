@@ -4,9 +4,6 @@
 
 Map::Map()
 {
-	SetFogEnable(TRUE);
-	SetFogColor(0, 0, 0);
-	SetFogStartEnd(fogStartPos, fogEndPos);
 }
 
 Map::~Map()

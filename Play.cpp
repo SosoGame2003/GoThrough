@@ -3,11 +3,13 @@
 #include"Play.h"
 #include"Map.h"
 #include"Player.h"
+#include"Wall.h"
 
 Play::Play()
 {
 	map = new Map();
 	player = new Player();
+	wall = new Wall();
 }
 
 Play::~Play()
@@ -17,12 +19,16 @@ Play::~Play()
 
 	delete player;
 	player = nullptr;
+	
+	delete wall;
+	wall = nullptr;
 }
 
 SCENE_TAG Play::Update(float deltaTime)
 {
 	map->Update(deltaTime);
 	player->Update(deltaTime);
+	wall->Update(deltaTime);
 
 	if (CheckHitKey(KEY_INPUT_SPACE))
 	{
@@ -40,5 +46,6 @@ SCENE_TAG Play::Update(float deltaTime)
 void Play::Draw()
 {
 	map->Draw();
+	wall->Draw();
 	player->Draw();
 }

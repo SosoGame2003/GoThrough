@@ -36,5 +36,5 @@ private:
 	int modelHandle;		// モデルハンドル
 	float moveX;			// X方向の移動量
 	float moveY;			// Y方向の移動量
-	float speed = 300.0f;	// 移動速度
+	float speed = 500.0f;	// 移動速度
 };

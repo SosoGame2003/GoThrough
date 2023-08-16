@@ -23,4 +23,5 @@ public:
 private:
 	class Map* map;
 	class Player* player;
+	class Wall* wall;
 };

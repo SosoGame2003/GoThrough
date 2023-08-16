@@ -25,7 +25,7 @@ public:
 	/// 更新処理
 	/// </summary>
 	/// <param name="deltaTime">デルタタイム</param>
-	/// <returns>NONEを返す</returns>
+	/// <returns>NONE</returns>
 	virtual SCENE_TAG Update(float deltaTime) = 0;
 
 	/// <summary>
