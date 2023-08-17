@@ -9,6 +9,9 @@ public:
 	Wall();
 	~Wall();
 
+	void PlayerMove(float deltaTime);
+	void PlayerMovable();
+
 	void WallCollision();
 
 	/// <summary>
@@ -21,6 +24,9 @@ public:
 	/// 描画処理
 	/// </summary>
 	void Draw();
+
+	bool gameClear;
+	bool gameOver;
 
 private:
 	/// <summary>
@@ -47,6 +53,10 @@ private:
 	/// <param name="deltaTime">デルタタイム</param>
 	void LevelThreeMove(float deltaTime);
 
+	const float levelOneSpeed	=  600.0f;
+	const float levelTwoSpeed	=  900.0f;
+	const float levelThreeSpeed = 1200.0f;
+
 	VECTOR tutorialWallPos[2];	// チュートリアル用の壁の座標
 	int tutorialGraphHandle[2];	// チュートリアル用の壁の画像
 	bool tutoralWallAliveFlg[2];
@@ -63,7 +73,9 @@ private:
 	float angle[4];
 	bool wallAliveFlg[18];	// 生きているか？
 
-	const float levelOneSpeed = 600.0f;
-	const float levelTwoSpeed = 900.0f;
-	const float levelThreeSpeed = 1200.0f;
+	VECTOR playerPos = VGet(0.0f, 0.0f, 0.0f);
+	float moveX;			// X方向の移動量
+	float moveY;			// Y方向の移動量
+	float speed = 500.0f;	// 移動速度
+	bool hitCheckFlg[18];
 };

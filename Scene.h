@@ -7,7 +7,8 @@ enum class SCENE_TAG
 {
 	MENU,	// メニュー
 	PLAY,	// プレイ
-	RESULT,	// リザルト
+	CLEAR,	// ゲームクリア
+	OVER,	// ゲームオーバー
 	END,	// ゲーム終了
 	NONE,	// 戻り値
 };

@@ -2,11 +2,11 @@
 
 #include"Scene.h"
 
-class Result : public Scene
+class Clear : public Scene
 {
 public:
-	Result();
-	~Result();
+	Clear();
+	~Clear();
 
 	/// <summary>
 	/// XVˆ—

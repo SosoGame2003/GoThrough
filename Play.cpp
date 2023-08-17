@@ -30,9 +30,13 @@ SCENE_TAG Play::Update(float deltaTime)
 	player->Update(deltaTime);
 	wall->Update(deltaTime);
 
-	if (CheckHitKey(KEY_INPUT_SPACE))
+	if (wall->gameClear == true)
 	{
-		return SCENE_TAG::RESULT;
+		return SCENE_TAG::CLEAR;
+	}
+	if (wall->gameOver == true)
+	{
+		return SCENE_TAG::OVER;
 	}
 
 	if (CheckHitKey(KEY_INPUT_END))

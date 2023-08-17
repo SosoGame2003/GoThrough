@@ -52,11 +52,14 @@
     <ClCompile Include="Play.cpp">
       <Filter>Source\Scene\SceneType</Filter>
     </ClCompile>
-    <ClCompile Include="Result.cpp">
-      <Filter>Source\Scene\SceneType</Filter>
-    </ClCompile>
     <ClCompile Include="Collision.cpp">
       <Filter>Source\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Clear.cpp">
+      <Filter>Source\Scene\SceneType</Filter>
+    </ClCompile>
+    <ClCompile Include="Over.cpp">
+      <Filter>Source\Scene\SceneType</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -84,11 +87,14 @@
     <ClInclude Include="Play.h">
       <Filter>Source\Scene\SceneType</Filter>
     </ClInclude>
-    <ClInclude Include="Result.h">
-      <Filter>Source\Scene\SceneType</Filter>
-    </ClInclude>
     <ClInclude Include="Collision.h">
       <Filter>Source\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Clear.h">
+      <Filter>Source\Scene\SceneType</Filter>
+    </ClInclude>
+    <ClInclude Include="Over.h">
+      <Filter>Source\Scene\SceneType</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

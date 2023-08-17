@@ -17,7 +17,7 @@ MainMenu::~MainMenu()
 
 SCENE_TAG MainMenu::Update(float deltaTime)
 {
-	if (CheckHitKey(KEY_INPUT_RETURN))
+	if (CheckHitKey(KEY_INPUT_SPACE))
 	{
 		return SCENE_TAG::PLAY;
 	}

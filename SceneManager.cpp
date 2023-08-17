@@ -2,7 +2,8 @@
 #include"SceneManager.h"
 #include"MainMenu.h"
 #include"Play.h"
-#include"Result.h"
+#include"Clear.h"
+#include"Over.h"
 
 SceneManager::SceneManager()
 	: currentScene(nullptr)
@@ -81,8 +82,12 @@ void SceneManager::SetNowScene(const SCENE_TAG& tag)
 		currentScene = new Play();
 		break;
 
-	case SCENE_TAG::RESULT:
-		currentScene = new Result();
+	case SCENE_TAG::CLEAR:
+		currentScene = new Clear();
+		break;
+
+	case SCENE_TAG::OVER:
+		currentScene = new Over();
 		break;
 
 	case SCENE_TAG::NONE:
