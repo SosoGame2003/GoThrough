@@ -312,7 +312,7 @@ void Wall::WallCollision()
 						gameOver = true;
 					}
 				}
-				else if (randAngle[k + 1] == 1)
+				else if (randAngle[k + 9] == 1)
 				{
 					if (   playerPos.x <= -150
 						|| playerPos.x >= -90
@@ -322,7 +322,7 @@ void Wall::WallCollision()
 						gameOver = true;
 					}
 				}
-				else if (randAngle[k + 1] == 2)
+				else if (randAngle[k + 9] == 2)
 				{
 					if (   playerPos.x <= 90
 						|| playerPos.x >= 150
@@ -332,7 +332,7 @@ void Wall::WallCollision()
 						gameOver = true;
 					}
 				}
-				else if (randAngle[k + 1] == 3)
+				else if (randAngle[k + 9] == 3)
 				{
 					if (   playerPos.x <= 90
 						|| playerPos.x >= 150
