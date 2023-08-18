@@ -21,5 +21,17 @@ public:
 	void Draw() override;
 
 private:
+	class Map* map;
 
+	VECTOR clearPos;
+	int clearGraphHandle;
+	const float clearSpeed = 500.0f;
+	bool moveFlg;
+
+	VECTOR pressEnterPos;
+	int pressEnterGraphHandle;
+	const float pressEnterSpeed = 50.0f;
+	bool pressEnterFrontBack;
+
+	bool buttonEntry;
 };

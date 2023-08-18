@@ -26,20 +26,4 @@ void Map::Draw()
 	DrawLine3D(centerRightFrontPos,  centerRightBackPos,  mapBorderCenterLineColor);	// マップ右中心の線
 	DrawLine3D(centerUpperFrontPos,  centerUpperBackPos,  mapBorderCenterLineColor);	// マップ上中心の線
 	DrawLine3D(centerBottomFrontPos, centerBottomBackPos, mapBorderCenterLineColor);	// マップ下中心の線
-
-	// プレイヤーの座標を示す線
-	DrawLine3D(playerPosUpperLeftPos,   playerPosBottomLeftPos,  playerPosLineColor);	// 左の線
-	DrawLine3D(playerPosBottomLeftPos,  playerPosBottomRightPos, playerPosLineColor);	// 下の線
-	DrawLine3D(playerPosBottomRightPos, playerPosUpperRightPos,  playerPosLineColor);	// 右の線
-	DrawLine3D(playerPosUpperRightPos,  playerPosUpperLeftPos,   playerPosLineColor);	// 上の線
-
-	DrawLine3D(VGet(180, 300, 0), VGet(180, -300, 0), playerPosLineColor);
-	DrawLine3D(VGet(60, 300, 0), VGet(60, -300, 0), playerPosLineColor);
-	DrawLine3D(VGet(-60, 300, 0), VGet(-60, -300, 0), playerPosLineColor);
-	DrawLine3D(VGet(-180, 300, 0), VGet(-180, -300, 0), playerPosLineColor);
-
-	DrawLine3D(VGet(300, 180, 0), VGet(-300, 180, 0), playerPosLineColor);
-	DrawLine3D(VGet(300, 60, 0), VGet(-300, 60, 0), playerPosLineColor);
-	DrawLine3D(VGet(300, -60, 0), VGet(-300, -60, 0), playerPosLineColor);
-	DrawLine3D(VGet(300, -180, 0), VGet(-300, -180, 0), playerPosLineColor);
 }

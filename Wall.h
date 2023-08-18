@@ -27,6 +27,7 @@ public:
 
 	bool gameClear;
 	bool gameOver;
+	bool wallHit;
 
 private:
 	/// <summary>
@@ -78,4 +79,6 @@ private:
 	float moveY;			// Y•ûŒü‚ÌˆÚ“®—Ê
 	float speed = 500.0f;	// ˆÚ“®‘¬“x
 	bool hitCheckFlg[18];
+
+	int wallHitGraphHandle;
 };

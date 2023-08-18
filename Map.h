@@ -33,12 +33,4 @@ private:
 	const VECTOR centerBottomBackPos  = VGet(	 0, -300, 5000);	// 下中心奥の座標
 
 	int mapBorderCenterLineColor = GetColor(50, 50, 50);	// マップの中心の枠線の色
-
-	// プレイヤーの位置示す線
-	const VECTOR playerPosUpperLeftPos	 = VGet(-300, 300, 0);	// マップの枠の左上の座標
-	const VECTOR playerPosBottomLeftPos	 = VGet(-300,-300, 0);	// マップの枠の左下の座標
-	const VECTOR playerPosUpperRightPos	 = VGet( 300, 300, 0);	// マップの枠の右上の座標
-	const VECTOR playerPosBottomRightPos = VGet( 300,-300, 0);	// マップの枠の右下の座標
-
-	int playerPosLineColor = GetColor(255, 0, 0);	// プレイヤーの座標を示すの線の色
 };

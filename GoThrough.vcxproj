@@ -132,7 +132,6 @@
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Clear.cpp" />
-    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -145,7 +144,6 @@
   <ItemGroup>
     <ClInclude Include="Application.h" />
     <ClInclude Include="Clear.h" />
-    <ClInclude Include="Collision.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Over.h" />

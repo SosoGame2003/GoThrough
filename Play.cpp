@@ -27,14 +27,19 @@ Play::~Play()
 SCENE_TAG Play::Update(float deltaTime)
 {
 	map->Update(deltaTime);
-	player->Update(deltaTime);
+
+	if (wall->wallHit == false)
+	{
+		player->Update(deltaTime);
+	}
+
 	wall->Update(deltaTime);
 
 	if (wall->gameClear == true)
 	{
 		return SCENE_TAG::CLEAR;
 	}
-	if (wall->gameOver == true)
+	if (wall->wallHit == true)
 	{
 		return SCENE_TAG::OVER;
 	}

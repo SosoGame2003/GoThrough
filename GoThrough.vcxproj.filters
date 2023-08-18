@@ -20,9 +20,6 @@
     <Filter Include="Source\Wall">
       <UniqueIdentifier>{b433a789-1e5e-49cf-81ca-a556bbb2aaf5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Collision">
-      <UniqueIdentifier>{c5448ea3-0ef7-4d26-b6ad-21e4cf2dea0b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source\Scene\SceneType">
       <UniqueIdentifier>{94253a16-f9db-4543-86de-403ea6727479}</UniqueIdentifier>
     </Filter>
@@ -51,9 +48,6 @@
     </ClCompile>
     <ClCompile Include="Play.cpp">
       <Filter>Source\Scene\SceneType</Filter>
-    </ClCompile>
-    <ClCompile Include="Collision.cpp">
-      <Filter>Source\Collision</Filter>
     </ClCompile>
     <ClCompile Include="Clear.cpp">
       <Filter>Source\Scene\SceneType</Filter>
@@ -86,9 +80,6 @@
     </ClInclude>
     <ClInclude Include="Play.h">
       <Filter>Source\Scene\SceneType</Filter>
-    </ClInclude>
-    <ClInclude Include="Collision.h">
-      <Filter>Source\Collision</Filter>
     </ClInclude>
     <ClInclude Include="Clear.h">
       <Filter>Source\Scene\SceneType</Filter>

@@ -13,7 +13,7 @@ Player::Player()
 	modelHandle = MV1LoadModel("Data/Model/Rocket.mv1");
 	MV1SetScale(modelHandle, VGet(0.5f, 0.5f, 0.5f));												// モデルのサイズを変更
 	MV1SetRotationXYZ(modelHandle, VGet(90.0f * DX_PI_F / 180.0f, 0.0f, 0.0f));						// モデルをX方向に90°回転
-	MV1SetMaterialEmiColor(modelHandle, 0, GetColorF(0.0f, 0.0f, 1.0f, 1.0f));	// プレイヤーモデルの機体の色
+	MV1SetMaterialEmiColor(modelHandle, 0, GetColorF(0.0f, 1.0f, 0.0f, 1.0f));	// プレイヤーモデルの機体の色
 	MV1SetMaterialEmiColor(modelHandle, 1, GetColorF(0.1f, 0.0f, 0.0f, 1.0f));	// プレイヤーモデルのエンジンの色
 }
 
@@ -58,6 +58,16 @@ void Player::Move(float deltaTime)
 
 	if (input)	// 移動キーの入力が確認された時
 	{
+		if (CheckHitKey(KEY_INPUT_LEFT))
+		{
+			MV1SetRotationXYZ(modelHandle, VGet(90.0f * DX_PI_F / 180.0f, 0.0f, 30.0f * DX_PI_F / 180.0f));
+		}
+		else if (CheckHitKey(KEY_INPUT_RIGHT))
+		{
+			MV1SetRotationXYZ(modelHandle, VGet(90.0f * DX_PI_F / 180.0f, 0.0f, -30.0f * DX_PI_F / 180.0f));
+		}
+
+
 		// 上下または左右の同時入力時に入力をなかったことにする
 		if (CheckHitKey(KEY_INPUT_UP) && CheckHitKey(KEY_INPUT_DOWN)
 			|| CheckHitKey(KEY_INPUT_LEFT) && CheckHitKey(KEY_INPUT_RIGHT))
@@ -67,6 +77,8 @@ void Player::Move(float deltaTime)
 	}
 	else	// 移動キーの入力が確認されなかった時
 	{
+		MV1SetRotationXYZ(modelHandle, VGet(90.0f * DX_PI_F / 180.0f, 0.0f, 0.0f));
+
 		moveX = 0.0f;
 		moveY = 0.0f;
 	}
@@ -78,21 +90,21 @@ void Player::Move(float deltaTime)
 
 void Player::MovableRange()
 {
-	if (pos.x <= -300.0f)
+	if (pos.x <= -270.0f)
 	{
-		pos.x = -300.0f;
+		pos.x = -270.0f;
 	}
-	if (pos.x >= 300.0f)
+	if (pos.x >= 270.0f)
 	{
-		pos.x = 300.0f;
+		pos.x = 270.0f;
 	}
-	if (pos.y <= -300.0f)
+	if (pos.y <= -270.0f)
 	{
-		pos.y = -300.0f;
+		pos.y = -270.0f;
 	}
-	if (pos.y >= 300.0f)
+	if (pos.y >= 270.0f)
 	{
-		pos.y = 300.0f;
+		pos.y = 270.0f;
 	}
 }
 
@@ -106,13 +118,29 @@ void Player::Update(float deltaTime)
 
 void Player::Draw()
 {
-	printfDx("\n\nx:%f\n", pos.x);
+	/*printfDx("\n\nx:%f\n", pos.x);
 	printfDx("y:%f\n", pos.y);
 	printfDx("z:%f\n", pos.z);
 	printfDx("\nspeed:%f\n", speed);
 	printfDx("moveX:%f\n", moveX);
-	printfDx("moveY:%f\n", moveY);
+	printfDx("moveY:%f\n", moveY);*/
 
-	//MV1DrawModel(modelHandle);
-	DrawSphere3D(pos, 30.0f, 16, GetColor(0, 0, 255), GetColor(0, 0, 255), FALSE);
+	MV1DrawModel(modelHandle);
+	//DrawSphere3D(pos, 30.0f, 16, GetColor(0, 0, 255), GetColor(0, 0, 255), FALSE);
+
+	// プレイヤーの座標を示す線
+	DrawLine3D(playerPosUpperLeftPos, playerPosBottomLeftPos, playerPosLineColor);	// 左の線
+	DrawLine3D(playerPosBottomLeftPos, playerPosBottomRightPos, playerPosLineColor);	// 下の線
+	DrawLine3D(playerPosBottomRightPos, playerPosUpperRightPos, playerPosLineColor);	// 右の線
+	DrawLine3D(playerPosUpperRightPos, playerPosUpperLeftPos, playerPosLineColor);	// 上の線
+
+	DrawLine3D(VGet(180, 300, 0), VGet(180, -300, 0), playerPosLineColor);
+	DrawLine3D(VGet(60, 300, 0), VGet(60, -300, 0), playerPosLineColor);
+	DrawLine3D(VGet(-60, 300, 0), VGet(-60, -300, 0), playerPosLineColor);
+	DrawLine3D(VGet(-180, 300, 0), VGet(-180, -300, 0), playerPosLineColor);
+
+	DrawLine3D(VGet(300, 180, 0), VGet(-300, 180, 0), playerPosLineColor);
+	DrawLine3D(VGet(300, 60, 0), VGet(-300, 60, 0), playerPosLineColor);
+	DrawLine3D(VGet(300, -60, 0), VGet(-300, -60, 0), playerPosLineColor);
+	DrawLine3D(VGet(300, -180, 0), VGet(-300, -180, 0), playerPosLineColor);
 }

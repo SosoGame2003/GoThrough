@@ -45,8 +45,8 @@ void SceneManager::GameLoop()
 		clsDx();			// ŠÈˆÕ‰æ–Êo—Í—š—ð‚ðƒNƒŠƒA
 
 #ifdef _DEBUG
-		printfDx("deltaTime:%f\n", deltaTime);
-		printfDx("FPS:%d\n", fps);
+		/*printfDx("deltaTime:%f\n", deltaTime);
+		printfDx("FPS:%d\n", fps);*/
 #endif // _DEBUG
 		currentScene->Draw();
 

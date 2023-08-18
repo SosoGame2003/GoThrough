@@ -20,8 +20,12 @@ Wall::Wall()
 	wallGraphHandle[4]	   = LoadGraph("Data/Graph/Wall05.png");
 	wallGraphHandle[5]	   = LoadGraph("Data/Graph/Wall06.png");
 
+	wallHitGraphHandle	   = LoadGraph("Data/Graph/WallHit.png");
+
 	gameClear = false;
 	gameOver  = false;
+
+	wallHit   = false;
 
 	tutorialWallPos[0]	   = VGet(0.0f, 0.0f, 1500.0f);
 	tutorialWallPos[1]	   = VGet(0.0f, 0.0f, 1500.0f);
@@ -131,21 +135,21 @@ void Wall::PlayerMove(float deltaTime)
 
 void Wall::PlayerMovable()
 {
-	if (playerPos.x <= -300.0f)
+	if (playerPos.x <= -270.0f)
 	{
-		playerPos.x = -300.0f;
+		playerPos.x = -270.0f;
 	}
-	if (playerPos.x >= 300.0f)
+	if (playerPos.x >= 270.0f)
 	{
-		playerPos.x = 300.0f;
+		playerPos.x = 270.0f;
 	}
-	if (playerPos.y <= -300.0f)
+	if (playerPos.y <= -270.0f)
 	{
-		playerPos.y = -300.0f;
+		playerPos.y = -270.0f;
 	}
-	if (playerPos.y >= 300.0f)
+	if (playerPos.y >= 270.0f)
 	{
-		playerPos.y = 300.0f;
+		playerPos.y = 270.0f;
 	}
 }
 
@@ -172,7 +176,7 @@ void Wall::WallCollision()
 			|| playerPos.y >= 150
 			|| playerPos.y <= -150)
 		{
-			gameOver = true;
+			wallHit = true;
 		}
 	}
 
@@ -187,7 +191,7 @@ void Wall::WallCollision()
 					if (playerPos.x >= -90
 						|| playerPos.y <= 90)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 				else if (randAngle[j + 1] == 1)
@@ -195,7 +199,7 @@ void Wall::WallCollision()
 					if (playerPos.x >= -90
 						|| playerPos.y >= -90)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 				else if (randAngle[j + 1] == 2)
@@ -203,7 +207,7 @@ void Wall::WallCollision()
 					if (playerPos.x <= 90
 						|| playerPos.y >= -90)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 				else if (randAngle[j + 1] == 3)
@@ -211,7 +215,7 @@ void Wall::WallCollision()
 					if (playerPos.x <= 90
 						|| playerPos.y <= 90)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 			}
@@ -224,7 +228,7 @@ void Wall::WallCollision()
 						|| playerPos.y >= 150
 						|| playerPos.y <= -30)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 				else if (randAngle[j + 1] == 1)
@@ -234,7 +238,7 @@ void Wall::WallCollision()
 						|| playerPos.y >= 30
 						|| playerPos.y <= -150)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 				else if (randAngle[j + 1] == 2)
@@ -244,7 +248,7 @@ void Wall::WallCollision()
 						|| playerPos.y >= 30
 						|| playerPos.y <= -150)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 				else if (randAngle[j + 1] == 3)
@@ -254,7 +258,7 @@ void Wall::WallCollision()
 						|| playerPos.y >= 150
 						|| playerPos.y <= -30)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 			}
@@ -272,7 +276,7 @@ void Wall::WallCollision()
 					if (playerPos.x >= -210
 						|| playerPos.y <= 210)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 				else if (randAngle[k + 9] == 1)
@@ -280,7 +284,7 @@ void Wall::WallCollision()
 					if (playerPos.x >= -210
 						|| playerPos.y >= -210)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 				else if (randAngle[k + 9] == 2)
@@ -288,7 +292,7 @@ void Wall::WallCollision()
 					if (playerPos.x <= 210
 						|| playerPos.y >= -210)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 				else if (randAngle[k + 9] == 3)
@@ -296,7 +300,7 @@ void Wall::WallCollision()
 					if (playerPos.x <= 210
 						|| playerPos.y <= 210)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 			}
@@ -309,7 +313,7 @@ void Wall::WallCollision()
 						|| playerPos.y >= 150
 						|| playerPos.y <= 90)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 				else if (randAngle[k + 9] == 1)
@@ -319,7 +323,7 @@ void Wall::WallCollision()
 						|| playerPos.y >= -90
 						|| playerPos.y <= -150)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 				else if (randAngle[k + 9] == 2)
@@ -329,7 +333,7 @@ void Wall::WallCollision()
 						|| playerPos.y >= -90
 						|| playerPos.y <= -150)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 				else if (randAngle[k + 9] == 3)
@@ -339,7 +343,7 @@ void Wall::WallCollision()
 						|| playerPos.y >= 150
 						|| playerPos.y <= 90)
 					{
-						gameOver = true;
+						wallHit = true;
 					}
 				}
 			}
@@ -350,7 +354,7 @@ void Wall::WallCollision()
 					|| playerPos.y >= 30
 					|| playerPos.y <= -30)
 				{
-					gameOver = true;
+					wallHit = true;
 				}
 			}
 		}
@@ -638,21 +642,28 @@ void Wall::LevelThreeMove(float deltaTime)
 
 void Wall::Update(float deltaTime)
 {
-	PlayerMove(deltaTime);
-	PlayerMovable();
-	WallCollision();
-	TutorialMove(deltaTime);
-	if (levelChange[0] == true)
+	if (wallHit == false)
 	{
-		LevelOneMove(deltaTime);
+		PlayerMove(deltaTime);
+		PlayerMovable();
+		WallCollision();
+		TutorialMove(deltaTime);
+		if (levelChange[0] == true)
+		{
+			LevelOneMove(deltaTime);
+		}
+		if (levelChange[1] == true)
+		{
+			LevelTwoMove(deltaTime);
+		}
+		if (levelChange[2] == true)
+		{
+			LevelThreeMove(deltaTime);
+		}
 	}
-	if (levelChange[1] == true)
+	else
 	{
-		LevelTwoMove(deltaTime);
-	}
-	if (levelChange[2] == true)
-	{
-		LevelThreeMove(deltaTime);
+
 	}
 }
 
@@ -682,7 +693,12 @@ void Wall::Draw()
 		}
 	}
 
-	printfDx("\n\nx:%f\n", playerPos.x);
+	if (wallHit == true)
+	{
+		DrawGraph(0, 0, wallHitGraphHandle, TRUE);
+	}
+
+	/*printfDx("\n\nx:%f\n", playerPos.x);
 	printfDx("y:%f\n", playerPos.y);
-	printfDx("z:%f\n", playerPos.z);
+	printfDx("z:%f\n", playerPos.z);*/
 }
